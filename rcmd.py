@@ -14,10 +14,10 @@ def rcmd(host, user, passwd, port=22, cmds=None):
     err = stderr.read()
 
     if out: # 如果输出非空
-        print('[%s] OUT:\n%s' % (host, out.decode()))
+        print('[%s] \033[32;1mOUT\033[0m:\n%s' % (host, out.decode()))
 
     if err: # 如果错误非空
-        print('[%s] ERROR:\n%s' % (host, err.decode()))
+        print('[%s] \033[31;1mERROR\033[0m:\n%s' % (host, err.decode()))
 
     # 关闭连接
     ssh.close()
